@@ -25,7 +25,13 @@ body {
   transition: transform 0.5s ease;
 }
 
-.nav-link:active {
+.materi-style:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+}
+
+.nav-link:active,
+.materi-style:active {
   transform: scale(0.95);
   transition: transform 0.5s ease;
 }
@@ -34,4 +40,9 @@ body {
   background-color: var(--navbar-bg-actived);
   border-radius: 20px;
   color: var(--navbar-fg-actived);
+}
+
+.link-position-materi {
+  border-bottom: 3px solid var(--materi-underline);
+  padding-bottom: 5px;
 }
