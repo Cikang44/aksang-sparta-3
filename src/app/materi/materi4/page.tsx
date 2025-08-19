@@ -25,16 +25,18 @@ const Page = () => {
                 </div>
 
                 {/* Bagian bawah: 2 box sejajar */}
-                <div className="m-2 mt-8 flex gap-4 mb-100">
-                    <div className="flex-1 h-40 rounded-2xl">
-                        <div className="flex-1 bg-blue-950 h-100 rounded-2xl">
-
+                <div className="m-2 mt-8 flex gap-4 mb-25">
+                    <div className="flex-1 rounded-2xl">
+                        <div className="flex flex-1 bg-blue-950 h-100 rounded-2xl justify-center text-center items-center">
+                            <h1 className='font-bold' style={{ fontSize: "50px" }}>Foto</h1>
                         </div>
-                        <div className="mt-8 flex-1 bg-blue-950 h-100 rounded-2xl">
-
+                        <div className="mt-8 flex flex-1 bg-blue-950 h-100 rounded-2xl justify-center text-center items-center">
+                            <h1 className='font-bold' style={{ fontSize: "50px" }}>Foto</h1>
                         </div>
                     </div>
-                    <div className="flex-1 bg-blue-950 h-208 rounded-2xl" style={{}}></div>
+                    <div className="flex flex-2 bg-blue-950 h-208 rounded-2xl justify-center text-center items-center" style={{}}>
+                        <h1 className='font-bold' style={{ fontSize: "50px" }}>Penjelasan Lagi Yey!</h1>
+                    </div>
                 </div>
             </div>
         </div>

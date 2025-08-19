@@ -1,10 +1,13 @@
-import React from 'react'
-import Navbar from '@/components/Navbar'
+import React from 'react';
+import Navbar from '@/components/Navbar';
+import BlurryDot from '@/components/BlurDot';
 
 const Homepage = () => {
     return (
         <div className='container'>
             <Navbar />
+            <BlurryDot size={300} color="bg-blue-500" position="top-1" />
+            <BlurryDot size={300} color="bg-pink-500" position="bottom-1 right-1" />
             <div className="flex items-center justify-between" style={{ marginTop: "10vh", marginLeft: '25vh', marginRight: '25vh' }}>
                 {/* Kiri: Teks */}
                 <div className="flex flex-col items-start" style={{ maxWidth: "50%" }}>
