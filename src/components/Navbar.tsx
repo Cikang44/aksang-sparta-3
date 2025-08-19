@@ -19,8 +19,8 @@ export default function Navbar() {
                 <ul className="hidden md:flex gap-12 font-bold">
                     <li className="nav-link">
                         <Link
-                            href="/materi"
-                            className={`transition duration-200 px-3 py-1 ${pathname === "/materi" ? "link-position-navbar" : ""
+                            href="/materi/materi1"
+                            className={`transition duration-200 px-3 py-1 ${pathname.startsWith("/materi") ? "link-position-navbar" : ""
                                 }`}
                         >
                             Materi

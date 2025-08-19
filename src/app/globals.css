@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-
 @import "tailwindcss";
 
 :root {
@@ -23,6 +22,11 @@ body {
 .nav-link:hover {
   color: var(--navbar-fg-hover);
   transform: scale(1.05);
+  transition: transform 0.5s ease;
+}
+
+.nav-link:active {
+  transform: scale(0.95);
   transition: transform 0.5s ease;
 }
 
