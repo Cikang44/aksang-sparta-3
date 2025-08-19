@@ -28,7 +28,7 @@ const Page = () => {
                 <div className="m-2 mt-8 flex gap-4 mb-100">
                     <div className="flex-1 h-40 rounded-2xl">
                         <div className="flex-1 bg-blue-950 h-100 rounded-2xl">
-                            <h1>Foto</h1>
+                            <h1 className='font-bold'>Foto</h1>
                         </div>
                         <div className="mt-8 flex-1 bg-blue-950 h-100 rounded-2xl">
                             <h1>Foto</h1>
