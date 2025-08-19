@@ -1,46 +1,54 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+    const pathname = usePathname();// ambil path aktif
+
     return (
         <nav className="shadow-md" style={{ backgroundColor: "var(--navbar-bg)", color: "var(navbar-fg)" }}>
             <div className="container mx-auto flex items-center justify-between px-6 py-3">
                 {/* Logo */}
-                <Link href="/" className="text-xl font-bold nav-link" style={{ color: "var(navbar-fg)" }}>
+                <Link href="/" className={`nav-link font-bold px-3 py-1 ${pathname === "/" ? "link-position-navbar" : ""
+                    }`} style={{ color: "var(navbar-fg)" }}>
                     Proxy
                 </Link>
 
                 {/* Menu */}
                 <ul className="hidden md:flex gap-12 font-bold">
-                    <li>
+                    <li className="nav-link">
                         <Link
-                            href="#about"
-                            className="nav-link transition duration-200"
+                            href="/materi"
+                            className={`transition duration-200 px-3 py-1 ${pathname === "/materi" ? "link-position-navbar" : ""
+                                }`}
                         >
                             Materi
                         </Link>
                     </li>
-                    <li>
+                    <li className="nav-link">
                         <Link
-                            href="#Game"
-                            className="nav-link transition duration-200"
+                            href="/game"
+                            className={`nav-link transition duration-200 px-3 py-1 ${pathname === "/game" ? "link-position-navbar" : ""
+                                }`}
                         >
                             Game
                         </Link>
                     </li>
-                    <li>
+                    <li className="nav-link">
                         <Link
-                            href="#Chatbot"
-                            className="nav-link transition duration-200"
+                            href="/chatbot"
+                            className={`nav-link transition duration-200 px-3 py-1 ${pathname === "/chatbot" ? "link-position-navbar" : ""
+                                }`}
                         >
                             ChatBot
                         </Link>
                     </li>
-                    <li>
+                    <li className="nav-link">
                         <Link
-                            href="#Inovasi"
-                            className="nav-link transition duration-200"
+                            href="/inovasi"
+                            className={`nav-link transition duration-200 px-3 py-1 ${pathname === "/inovasi" ? "link-position-navbar" : ""
+                                }`}
                         >
                             Inovasi
                         </Link>
@@ -52,6 +60,6 @@ export default function Navbar() {
                     ☰
                 </button>
             </div>
-        </nav>
+        </nav >
     );
 }

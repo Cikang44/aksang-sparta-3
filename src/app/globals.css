@@ -22,4 +22,12 @@ body {
 
 .nav-link:hover {
   color: var(--navbar-fg-hover);
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+}
+
+.link-position-navbar {
+  background-color: var(--navbar-bg-actived);
+  border-radius: 20px;
+  color: var(--navbar-fg-actived);
 }

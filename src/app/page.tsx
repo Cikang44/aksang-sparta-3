@@ -1,9 +1,9 @@
-import Navbar from "@/components/Navbar";
+import Homepage from "./Homepage";
 
 export default function Home() {
   return (
-    <div>
-      <Navbar />
+    <div style={{ fontFamily: "var(--font-family)" }}>
+      <Homepage />
     </div>
   );
 }
