@@ -16,19 +16,5 @@ export async function POST(req: Request) {
     messages: modelMessages,
   });
 
-  return result.toUIMessageStreamResponse({
-    originalMessages: messages,
-    mapMessage: (msg) => ({
-      ...msg,
-      parts: [
-        {
-          type: "text",
-          text: msg.content,
-        },
-      ],
-    }),
-    onFinish: ({ responseMessage }) => {
-      console.log("Response message finished:", responseMessage);
-    },
-  });
+  return result.toUIMessageStreamResponse();
 }
