@@ -36,6 +36,8 @@ import {
 } from '@/components/ai-elements/reasoning';
 import { Loader } from '@/components/ai-elements/loader';
 
+import { ThemeToggle } from '@/components/theme-toggle';
+
 const models = [
   {
     name: 'GPT 4o',
@@ -72,6 +74,8 @@ const AIChat = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 relative size-full h-screen">
       <div className="flex flex-col h-full">
+        <h1 className="text-xl font-bold">AI Chat</h1>
+        <ThemeToggle />
         <Conversation className="h-full">
           <ConversationContent>
             {messages.map((message) => (
