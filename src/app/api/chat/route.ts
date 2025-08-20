@@ -1,26 +1,20 @@
-import { streamText, UIMessage, convertToModelMessages } from 'ai';
+import { streamText, convertToModelMessages, UIMessage } from "ai";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
 
-// Allow streaming responses up to 30 seconds
-export const maxDuration = 30;
+export const runtime = "edge";
+
+const google = createGoogleGenerativeAI({
+  apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY!,
+});
 
 export async function POST(req: Request) {
-  const {
-    messages,
-    model,
-    webSearch,
-  }: { messages: UIMessage[]; model: string; webSearch: boolean } =
-    await req.json();
+  const { messages }: { messages: UIMessage[] } = await req.json();
+  const modelMessages = convertToModelMessages(messages);
 
-  const result = streamText({
-    model: webSearch ? 'perplexity/sonar' : model,
-    messages: convertToModelMessages(messages),
-    system:
-      'You are a helpful assistant that can answer questions and help with tasks',
+  const result = await streamText({
+    model: google("models/gemini-1.5-flash-latest"),
+    messages: modelMessages,
   });
 
-  // send sources and reasoning back to the client
-  return result.toUIMessageStreamResponse({
-    sendSources: true,
-    sendReasoning: true,
-  });
+  return result.toUIMessageStreamResponse();
 }
