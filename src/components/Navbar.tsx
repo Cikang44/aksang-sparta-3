@@ -52,7 +52,7 @@ export default function Navbar() {
                                     <motion.div
                                         layoutId="activeBackground"
                                         className="absolute inset-0 rounded-md" style={{ backgroundColor: "var(--navbar-bg-actived)" }}
-                                        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                                        transition={{ type: "spring", stiffness: 600, damping: 50 }}
                                     />
                                 )}
                             </li>
