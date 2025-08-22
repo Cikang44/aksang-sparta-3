@@ -25,10 +25,9 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link
                     href="/"
-                    className={`font-bold px-3 py-1 ${pathname === "/" ? "text-blue-600" : ""
-                        }`}
+                    className={`px-10 py-1 cursor-pointer`}
                 >
-                    Proxy
+                    <img src="Proxy_Color.png" width="50px" className="cursor-pointer" />
                 </Link>
 
                 {/* Menu */}
