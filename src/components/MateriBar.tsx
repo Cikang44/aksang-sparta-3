@@ -18,7 +18,7 @@ const MateriBar = () => {
     return (
         <div style={{ fontFamily: "var(--font-family)" }}>
             <Navbar />
-            <div className="relative flex justify-center gap-40 p-10 font-bold">
+            <div className="relative flex justify-center gap-80 p-10 font-bold">
                 {navItems.map((item) => (
                     <Link
                         key={item.path}
