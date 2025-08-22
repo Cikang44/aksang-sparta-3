@@ -24,18 +24,17 @@ const Homepage = () => {
                     style={{
                         width: "450px",
                         height: "450px",
-                        borderRadius: "50%",
                         overflow: "hidden",
                         flexShrink: 0, // biar tidak dipaksa mengecil oleh flexbox
                     }}
                 >
                     <img
-                        src="/betabukagudang.jpg"
+                        src="/Proxy_Color.png"
                         alt="gambar"
                         style={{
                             width: "100%",
                             height: "100%",
-                            objectFit: "cover"
+                            objectFit: "contain"
                         }} />
                 </div>
             </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import path from "path";
+import Image from "next/image";
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -23,11 +24,14 @@ export default function Navbar() {
         >
             <div className="container mx-auto flex items-center justify-between px-6 py-3">
                 {/* Logo */}
-                <Link
-                    href="/"
-                    className={`px-10 py-1 cursor-pointer`}
-                >
-                    <img src="Proxy_Color.png" width="50px" className="cursor-pointer" />
+                <Link href="/" className="px-10 py-1 cursor-pointer">
+                    <Image
+                        src="/Proxy_Color.png"
+                        alt="Logo"
+                        width={50}
+                        height={50}
+                        className="cursor-pointer"
+                    />
                 </Link>
 
                 {/* Menu */}
@@ -39,7 +43,7 @@ export default function Navbar() {
                                 : pathname === item.path;
 
                         return (
-                            <li key={item.path} className="relative">
+                            <li key={item.path} className="relative nav-link">
                                 <Link
                                     href={item.path}
                                     className="relative z-10 px-4 py-2 rounded-md"

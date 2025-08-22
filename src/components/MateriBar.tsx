@@ -23,7 +23,7 @@ const MateriBar = () => {
                     <Link
                         key={item.path}
                         href={item.path}
-                        className={`relative px-2 font-bold"
+                        className={`materi-style relative px-2 font-bold"
                             }`}
                     >
                         {item.name}

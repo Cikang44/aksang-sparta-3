@@ -35,14 +35,3 @@ body {
   transform: scale(0.95);
   transition: transform 0.5s ease;
 }
-
-.link-position-navbar {
-  background-color: var(--navbar-bg-actived);
-  border-radius: 20px;
-  color: var(--navbar-fg-actived);
-}
-
-.link-position-materi {
-  border-bottom: 3px solid var(--materi-underline);
-  padding-bottom: 5px;
-}
