@@ -7,20 +7,26 @@ const Page = () => {
             <MateriBar />
             <div className="mx-25">
                 {/* Bagian atas: 2 kolom pakai flex */}
-                <div className="flex gap-2 m-2" style={{ height: "300px" }}>
-                    <div className="flex flex-col justify-center items-center flex-[3] text-center bg-blue-950 text-white rounded-2xl">
-                        <h1 className="font-bold text-5xl">Judul Materi</h1>
-                        <h2 className="text-xl">Sub-Judul</h2>
+                <div className="flex gap-2 m-2 bg-blue-950 rounded-2xl" style={{ height: "300px" }}>
+                    <div className="flex flex-col justify-center items-center flex-[3] text-start">
+                        <h1 className="font-bold text-5xl max-w-100">The Adventures Start Here</h1>
                     </div>
                     <div className="flex items-center justify-center flex-[2] bg-blue-950 text-white rounded-2xl">
-                        <h1 className="font-bold text-5xl">Foto apapun</h1>
+                        <img
+                            src="/materi1.png"
+                            alt="Materi 1"
+                            className="w-[250px] h-[250px] object-cover rounded-lg"
+                        />
                     </div>
                 </div>
 
                 {/* Bagian tengah */}
                 <div className="m-2 mt-8">
-                    <div className="flex flex-col items-center justify-center bg-blue-950 text-white rounded-2xl" style={{ height: "200px" }}>
-                        <h1 className="font-bold text-5xl">Penjelasan Lagi</h1>
+                    <div className="flex flex-col items-start justify-start text-justify" style={{ height: "200px" }}>
+                        <p className="font-bold text-3xl">AI atau Kecerdasan Aritifisal serangkaian teknologi yang memungkinkan komputer melakukan
+                            fungsi komplek seperti kemampuan melihat, menganalisi data, membuat rekomendasi dan sebagainya. karena banyaknya besarnya dampak AI dalam kehidupan.
+                            Dalam penggunaan AI penting adanya sebuah etika sebagai batasan, yaitu Etika AI.
+                        </p>
                     </div>
                 </div>
 
@@ -34,8 +40,22 @@ const Page = () => {
                             <h1 className='font-bold' style={{ fontSize: "50px" }}>Foto</h1>
                         </div>
                     </div>
-                    <div className="flex flex-2 bg-blue-950 h-208 rounded-2xl justify-center text-center items-center" style={{}}>
-                        <h1 className='font-bold' style={{ fontSize: "50px" }}>Penjelasan Lagi Yey!</h1>
+                    <div className="flex-1 h-208 justify-start text-start items-start" style={{}}>
+                        <div className='ml-25'>
+                            <h1 className='block font-bold text-3xl text-justify mb-10'>3 Prinsip Belmont dalam Pengembangan AI</h1>
+                            <div className='mb-15'>
+                                <h1 className='block font-bold text-3xl text-justify'>Respect for Persons</h1>
+                                <h1 className='block text-3xl text-justify'>Setiap individu punya hak penuh atas dirinya—AI tidak boleh memperlakukan manusia hanya sebagai "objek" semata.</h1>
+                            </div>
+                            <div className='mb-15'>
+                                <h1 className='block font-bold text-3xl text-justify'>Beneficence</h1>
+                                <h1 className='block text-3xl text-justify'>AI harus membawa kebaikan: keputusan dan penggunaannya diarahkan demi kesejahteraan orang lain.</h1>
+                            </div>
+                            <div className='mb-15'>
+                                <h1 className='block font-bold text-3xl text-justify'>Justice</h1>
+                                <h1 className='block text-3xl text-justify'>Manfaat dan beban dari AI harus dibagi secara adil—tidak boleh hanya menguntungkan sebagian pihak.</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
