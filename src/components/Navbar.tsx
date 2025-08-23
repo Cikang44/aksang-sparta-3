@@ -19,7 +19,7 @@ export default function Navbar() {
     return (
         <nav
             className="shadow-md"
-            style={{ backgroundColor: "var(--navbar-bg)", color: "var(--navbar-fg)" }}
+            style={{ backgroundColor: "var(--navbar-bg)", color: "var(--navbar-fg)", width: "100vw" }}
         >
             <div className="container mx-auto flex items-center justify-between px-6 py-3">
                 {/* Logo */}
