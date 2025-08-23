@@ -32,7 +32,7 @@ const Page = () => {
                     {/* Bagian tengah */}
                     <div className="m-2 mt-8">
                         <div className="flex flex-col items-start justify-start text-justify" style={{ height: "200px" }}>
-                            <p className="font-bold text-3xl">AI atau Kecerdasan Aritifisal serangkaian teknologi yang memungkinkan komputer melakukan
+                            <p className="font-bold">AI atau Kecerdasan Aritifisal serangkaian teknologi yang memungkinkan komputer melakukan
                                 fungsi komplek seperti kemampuan melihat, menganalisi data, membuat rekomendasi dan sebagainya. karena banyaknya besarnya dampak AI dalam kehidupan.
                                 Dalam penggunaan AI penting adanya sebuah etika sebagai batasan, yaitu Etika AI.
                             </p>

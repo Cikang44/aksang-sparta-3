@@ -190,10 +190,10 @@ export default function AIChat() {
                       const wrapperClasses = cn(
                         "w-1/2 p-2 space-y-2 relative transition-colors",
                         {
-                          "border-l-4 border-green-500 bg-green-50 dark:border-green-400 dark:bg-green-900":
+                          "border-l-4 text-black border-green-500 bg-green-50 dark:border-green-400 dark:bg-green-900":
                             isCorrect && r.selected !== undefined,
 
-                          "border-l-4 border-red-500 bg-red-50   dark:border-red-400 dark:bg-red-900":
+                          "border-l-4 text-black border-red-500 bg-red-50   dark:border-red-400 dark:bg-red-900":
                             !isCorrect && r.selected !== undefined,
                         }
                       );
