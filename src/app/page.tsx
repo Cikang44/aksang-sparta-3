@@ -1,5 +1,10 @@
 import AIChat from "@/components/ai-chat";
+import Homepage from "./Homepage";
 
 export default function Home() {
-  return <AIChat />;
+  return (
+    <div style={{ fontFamily: "var(--font-family)" }}>
+      <Homepage />
+    </div>
+  );
 }
