@@ -1,3 +1,4 @@
+import AIChat from "@/components/ai-chat";
 import Homepage from "./Homepage";
 
 export default function Home() {
