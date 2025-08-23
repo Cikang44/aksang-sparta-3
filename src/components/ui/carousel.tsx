@@ -232,6 +232,7 @@ function CarouselNext({
 }
 
 export {
+  useCarousel,
   type CarouselApi,
   Carousel,
   CarouselContent,
