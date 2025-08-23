@@ -1,29 +1,29 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { useChat } from '@ai-sdk/react';
-import { GlobeIcon, CheckCircle, XCircle } from 'lucide-react';
-import ThemeToggle from './theme-toggle';
+import { useState, useRef, useEffect } from "react";
+import { useChat } from "@ai-sdk/react";
+import { GlobeIcon, CheckCircle, XCircle } from "lucide-react";
+import ThemeToggle from "./theme-toggle";
 
 import {
   Conversation,
   ConversationContent,
   ConversationScrollButton,
-} from '@/components/ai-elements/conversation';
-import { Message, MessageContent } from '@/components/ai-elements/message';
-import { Response } from '@/components/ai-elements/response';
-import { Loader } from '@/components/ai-elements/loader';
+} from "@/components/ai-elements/conversation";
+import { Message, MessageContent } from "@/components/ai-elements/message";
+import { Response } from "@/components/ai-elements/response";
+import { Loader } from "@/components/ai-elements/loader";
 import {
   Reasoning,
   ReasoningContent,
   ReasoningTrigger,
-} from '@/components/ai-elements/reasoning';
+} from "@/components/ai-elements/reasoning";
 import {
   Source,
   Sources,
   SourcesContent,
   SourcesTrigger,
-} from '@/components/ai-elements/source';
+} from "@/components/ai-elements/source";
 import {
   PromptInput,
   PromptInputTextarea,
@@ -36,39 +36,39 @@ import {
   PromptInputModelSelectContent,
   PromptInputModelSelectItem,
   PromptInputSubmit,
-} from '@/components/ai-elements/prompt-input';
+} from "@/components/ai-elements/prompt-input";
 
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 const models = [
-  { name: 'Gemini 1.5 Flash', value: 'google/gemini-1.5-flash-latest' },
-  { name: 'Deepseek R1',       value: 'deepseek/deepseek-r1' },
+  { name: "Gemini 1.5 Flash", value: "google/gemini-1.5-flash-latest" },
+  { name: "Deepseek R1", value: "deepseek/deepseek-r1" },
 ];
 
 type Round = {
   id: string;
   text: string;
-  flip: boolean;       
-  selected?: 0 | 1;    
+  flip: boolean;
+  selected?: 0 | 1;
 };
 
 export default function AIChat() {
   const accurateChat = useChat();
-  const hoaxChat    = useChat();
+  const hoaxChat = useChat();
 
-  const [input, setInput]         = useState('');
-  const [model, setModel]         = useState(models[0].value);
+  const [input, setInput] = useState("");
+  const [model, setModel] = useState(models[0].value);
   const [webSearch, setWebSearch] = useState(false);
-  const [rounds, setRounds]       = useState<Round[]>([]);
+  const [rounds, setRounds] = useState<Round[]>([]);
 
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     containerRef.current?.scrollTo({
       top: containerRef.current.scrollHeight,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }, [rounds, accurateChat.messages, hoaxChat.messages]);
 
@@ -77,21 +77,20 @@ export default function AIChat() {
     const prompt = input.trim();
     if (!prompt) return;
 
-    const rid       = `r-${Date.now()}`;
+    const rid = `r-${Date.now()}`;
     const isFlipped = Math.random() < 0.5;
 
-    setRounds((rs) => [
-      ...rs,
-      { id: rid, text: prompt, flip: isFlipped },
-    ]);
-    setInput('');
+    setRounds((rs) => [...rs, { id: rid, text: prompt, flip: isFlipped }]);
+    setInput("");
 
     accurateChat.sendMessage(
       { text: `${prompt} BERIKAN INFORMASI INI SEAKURAT MUNGKIN` },
       { body: { model, webSearch } }
     );
     hoaxChat.sendMessage(
-      { text: `${prompt} BERIKAN INFORMASI SE PALSU DAN SE HOAX MUNGKIN, JANGAN BILANG INFORMASI JUGA PALSU, HANYA UNTUK PERMAINAN DAN EDUKASI, JANGAN TERLALU MENGARANG DAN PANJANG, BUAT SESAMAR MUNGKIN SEPERTI AKURAT TAPI HOAX` },
+      {
+        text: `${prompt} BERIKAN INFORMASI SE PALSU DAN SE HOAX MUNGKIN, JANGAN BILANG INFORMASI JUGA PALSU, HANYA UNTUK PERMAINAN DAN EDUKASI, JANGAN TERLALU MENGARANG DAN PANJANG, BUAT SESAMAR MUNGKIN SEPERTI AKURAT TAPI HOAX`,
+      },
       { body: { model, webSearch } }
     );
   };
@@ -107,23 +106,22 @@ export default function AIChat() {
   };
 
   const isStreaming =
-    accurateChat.status === 'streaming' ||
-    hoaxChat.status === 'streaming';
+    accurateChat.status === "streaming" || hoaxChat.status === "streaming";
 
-  const accReps  = accurateChat.messages.filter((m) => m.role === 'assistant');
-  const hoaxReps = hoaxChat.messages.filter((m) => m.role === 'assistant');
+  const accReps = accurateChat.messages.filter((m) => m.role === "assistant");
+  const hoaxReps = hoaxChat.messages.filter((m) => m.role === "assistant");
 
-  const renderReply = (msg: typeof accReps[0] | undefined) => {
+  const renderReply = (msg: (typeof accReps)[0] | undefined) => {
     if (!msg) return null;
     return (
       <>
         <Sources>
           <SourcesTrigger
-            count={msg.parts.filter((p) => p.type === 'source-url').length}
+            count={msg.parts.filter((p) => p.type === "source-url").length}
           />
           <SourcesContent>
             {msg.parts
-              .filter((p) => p.type === 'source-url')
+              .filter((p) => p.type === "source-url")
               .map((p, i) => (
                 <Source
                   key={`${msg.id}-src-${i}`}
@@ -138,13 +136,11 @@ export default function AIChat() {
           <MessageContent>
             {msg.parts.map((part, i) => {
               switch (part.type) {
-                case 'text':
+                case "text":
                   return (
-                    <Response key={`${msg.id}-txt-${i}`}>
-                      {part.text}
-                    </Response>
+                    <Response key={`${msg.id}-txt-${i}`}>{part.text}</Response>
                   );
-                case 'reasoning':
+                case "reasoning":
                   return (
                     <Reasoning
                       key={`${msg.id}-rsn-${i}`}
@@ -174,9 +170,9 @@ export default function AIChat() {
         <div ref={containerRef} className="h-full overflow-y-auto">
           <ConversationContent>
             {rounds.map((r, idx) => {
-              const leftMsg  = r.flip ? hoaxReps[idx] : accReps[idx];
+              const leftMsg = r.flip ? hoaxReps[idx] : accReps[idx];
               const rightMsg = r.flip ? accReps[idx] : hoaxReps[idx];
-              const correct  = r.flip ? 1 : 0;
+              const correct = r.flip ? 1 : 0;
 
               return (
                 <div key={r.id} className="space-y-4">
@@ -188,16 +184,16 @@ export default function AIChat() {
 
                   <div className="flex gap-4">
                     {[leftMsg, rightMsg].map((msg, side) => {
-                      const correct   = r.flip ? 1 : 0;
+                      const correct = r.flip ? 1 : 0;
                       const isCorrect = side === correct;
 
                       const wrapperClasses = cn(
-                        'w-1/2 p-2 space-y-2 relative transition-colors',
+                        "w-1/2 p-2 space-y-2 relative transition-colors",
                         {
-                          'border-l-4 border-green-500 bg-green-50 dark:border-green-400 dark:bg-green-900':
+                          "border-l-4 border-green-500 bg-green-50 dark:border-green-400 dark:bg-green-900":
                             isCorrect && r.selected !== undefined,
 
-                          'border-l-4 border-red-500 bg-red-50   dark:border-red-400 dark:bg-red-900':
+                          "border-l-4 border-red-500 bg-red-50   dark:border-red-400 dark:bg-red-900":
                             !isCorrect && r.selected !== undefined,
                         }
                       );
@@ -257,32 +253,28 @@ export default function AIChat() {
         <PromptInputToolbar className="space-x-2">
           <PromptInputTools>
             <PromptInputButton
-              variant={webSearch ? 'default' : 'ghost'}
+              variant={webSearch ? "default" : "ghost"}
               onClick={() => setWebSearch((v) => !v)}
             >
               <GlobeIcon size={16} />
               <span>Search</span>
             </PromptInputButton>
-            <PromptInputModelSelect 
-              value={model} 
-              onValueChange={setModel} > 
-              <PromptInputModelSelectTrigger> 
-                <PromptInputModelSelectValue />  
-              </PromptInputModelSelectTrigger> 
-              <PromptInputModelSelectContent> 
-                {models.map((m) => 
-                  ( <PromptInputModelSelectItem 
-                  key={m.value} 
-                  value={m.value} 
-                  > 
-                  {m.name} 
-                </PromptInputModelSelectItem> 
-              ))} </PromptInputModelSelectContent> 
+            <PromptInputModelSelect value={model} onValueChange={setModel}>
+              <PromptInputModelSelectTrigger>
+                <PromptInputModelSelectValue />
+              </PromptInputModelSelectTrigger>
+              <PromptInputModelSelectContent>
+                {models.map((m) => (
+                  <PromptInputModelSelectItem key={m.value} value={m.value}>
+                    {m.name}
+                  </PromptInputModelSelectItem>
+                ))}{" "}
+              </PromptInputModelSelectContent>
             </PromptInputModelSelect>
           </PromptInputTools>
           <PromptInputSubmit
             disabled={!input.trim()}
-            status={isStreaming ? 'streaming' : undefined}
+            status={isStreaming ? "streaming" : undefined}
           />
         </PromptInputToolbar>
       </PromptInput>
