@@ -97,10 +97,13 @@ const Page = () => {
                             </p>
                         </AnimatedTextLeft>
                     </div>
-                    <div className="flex-1 rounded-2xl">
+                    <div className="flex-1 ">
                         <AnimatedTextRight>
-                            <div className="flex flex-1 bg-blue-950 h-120  justify-center text-center items-center">
-                                <h1 className='font-bold' style={{ fontSize: "50px" }}>Foto</h1>
+                            <div className="rounded-2xl flex flex-1 bg-blue-950 h-120  justify-center text-center items-center">
+                                <img
+                                    src={'/img8.jpeg'}
+                                    className='object-cover w-full p-4'
+                                />
                             </div>
                         </AnimatedTextRight>
                     </div>

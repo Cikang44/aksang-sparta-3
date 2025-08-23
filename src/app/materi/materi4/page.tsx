@@ -106,12 +106,18 @@ const Page = () => {
                     <div className="flex-1 rounded-2xl gap-">
                         <AnimatedTextRight>
                             <div className="flex flex-1 bg-blue-950 h-70  justify-center text-center items-center">
-                                <h1 className='font-bold' style={{ fontSize: "50px" }}>Foto</h1>
+                                <img
+                                    src={'/img7.jpeg'}
+                                    className='object-cover w-full p-4'
+                                />
                             </div>
                         </AnimatedTextRight>
                         <AnimatedTextRight>
                             <div className="flex flex-1 bg-blue-950 h-70 mt-6  justify-center text-center items-center">
-                                <h1 className='font-bold' style={{ fontSize: "50px" }}>Foto</h1>
+                                <img
+                                    src={'/img10.jpeg'}
+                                    className='object-cover w-full p-4'
+                                />
                             </div>
                         </AnimatedTextRight>
                     </div>

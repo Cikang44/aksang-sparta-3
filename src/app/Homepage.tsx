@@ -5,7 +5,7 @@ import AnimatedTextScale from '@/components/animatedTextScale';
 
 const Homepage = () => {
     return (
-        <div className='container'>
+        <div className='container mx-auto'>
             <Navbar />
             <AnimatedTextScale>
                 <BlurryDot size={300} color="bg-blue-500" position="top-1" />
@@ -13,7 +13,7 @@ const Homepage = () => {
             <AnimatedTextScale>
                 <BlurryDot size={300} color="bg-pink-500" position="bottom-1 right-1" />
             </AnimatedTextScale>
-            <div className="flex items-center justify-between" style={{ marginTop: "10vh", marginLeft: '25vh', marginRight: '25vh' }}>
+            <div className="flex items-center justify-between" style={{ marginTop: "10vh", paddingLeft: '25vh', paddingRight: '25vh' }}>
                 {/* Kiri: Teks */}
                 <div className="flex flex-col items-start text-justify" style={{ maxWidth: "60%" }}>
                     <h1 className="font-bold" style={{ fontSize: "50px" }}>MAKE</h1>
