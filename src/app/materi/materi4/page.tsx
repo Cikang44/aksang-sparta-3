@@ -3,12 +3,13 @@ import MateriBar from '@/components/MateriBar';
 import AnimatedTextUp from '@/components/animatedTextUp';
 import AnimatedTextLeft from '@/components/animatedTextLeft';
 import AnimatedTextRight from '@/components/animatedTextRight';
+import Image from 'next/image';
 
 const Page = () => {
     return (
         <div>
             <MateriBar />
-            <div className="mx-25">
+            <div className="px-25 mx-auto max-w-[1400px]">
                 {/* Bagian atas: 2 kolom pakai flex */}
                 <AnimatedTextUp>
                     <div className="flex gap-2 m-2 bg-blue-950 rounded-2xl" style={{ height: "300px" }}>
@@ -17,7 +18,9 @@ const Page = () => {
                             <h1 className="font-bold text-5xl max-w-120">Data Literacy: An Ability to Digest Information</h1>
                         </div>
                         <div className="flex items-center justify-center flex-[2] bg-blue-950 text-white rounded-2xl">
-                            <img
+                            <Image
+                                width={250}
+                                height={250}
                                 src="/materi4.jpg"
                                 alt="Materi 4"
                                 className="w-[250px] h-[250px] object-cover rounded-lg object-right"
@@ -36,7 +39,7 @@ const Page = () => {
                             </p>
                         </div>
                         <div className="flex flex-col items-center justify-start text-justify">
-                            <p className="text-3xl mt-4" style={{ fontSize: "30px" }}>
+                            <p className="text-3xl mt-4 w-full flex flex-row justify-center" style={{ fontSize: "30px" }}>
                                 <b className='bg-white p-3' style={{ color: 'var(--background)' }}>Masalah + Literasi Data = Solusi<br /></b>
                             </p>
                         </div>

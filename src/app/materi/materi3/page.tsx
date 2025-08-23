@@ -3,12 +3,13 @@ import MateriBar from '@/components/MateriBar';
 import AnimatedTextUp from '@/components/animatedTextUp';
 import AnimatedTextLeft from '@/components/animatedTextLeft';
 import AnimatedTextRight from '@/components/animatedTextRight';
+import Image from 'next/image';
 
 const Page = () => {
     return (
         <div>
             <MateriBar />
-            <div className="mx-25">
+            <div className="px-25 mx-auto max-w-[1400px]">
                 <AnimatedTextUp>
                     {/* Bagian atas: 2 kolom pakai flex */}
                     <div className="flex gap-2 m-2 bg-blue-950 rounded-2xl" style={{ height: "300px" }}>
@@ -16,7 +17,9 @@ const Page = () => {
                             <h1 className="font-bold text-5xl max-w-120">AI Bias & Hallucination: When Machines Reflect and Imagine</h1>
                         </div>
                         <div className="flex items-center justify-center flex-[2] bg-blue-950 text-white rounded-2xl">
-                            <img
+                            <Image
+                                width={250}
+                                height={250}
                                 src="/materi3.png"
                                 alt="Materi 3"
                                 className="w-[250px] h-[250px] object-cover rounded-lg object-right"
@@ -31,7 +34,7 @@ const Page = () => {
                     <div className="flex flex-col items-start justify-start text-justify" style={{ minHeight: "200px" }}>
                         <AnimatedTextUp>
                             <p className="font-bold text-3xl" style={{ fontSize: "30px" }}>
-                                AI bukanlah netral sepenuhnya. Teknologi ini dapat "mewarisi" prasangka manusia (bias) dan bahkan "mengarang" fakta (halusinasi). Kedua fenomena ini membawa risiko serius dalam dunia nyata, dari rekutmen kerja hingga layanan kesehatan.
+                                AI bukanlah netral sepenuhnya. Teknologi ini dapat &quot;mewarisi&quot; prasangka manusia (bias) dan bahkan &quot;mengarang&quot; fakta (halusinasi). Kedua fenomena ini membawa risiko serius dalam dunia nyata, dari rekutmen kerja hingga layanan kesehatan.
                             </p>
                             <p className="text-3xl mt-4" style={{ fontSize: "30px" }}>
                                 <b>Apa itu Bias AI?</b> AI bisa memperkuat prasangka yang ada dalam data, algoritma, atau bahkan dari pembuatnya.
@@ -82,8 +85,8 @@ const Page = () => {
                         </AnimatedTextLeft>
                         <AnimatedTextLeft>
                             <ol className="list-decimal text-3xl ml-10">
-                                <li>Prediksi probabilistik kata (LLM tidak "mengerti", hanya menebak).</li>
-                                <li>Tidak "grounded" pada realitas.</li>
+                                <li>Prediksi probabilistik kata (LLM tidak &quot;mengerti&quot;, hanya menebak).</li>
+                                <li>Tidak &quot;grounded&quot; pada realitas.</li>
                                 <li>Data pelatihan terbatas atau cacat.</li>
                                 <li>Overfitting → hafal data, gagal di kasus baru.</li>
                             </ol>

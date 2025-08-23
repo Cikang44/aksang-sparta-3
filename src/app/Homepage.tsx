@@ -1,9 +1,6 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import BlurryDot from '@/components/BlurDot';
-import AnimatedTextUp from '@/components/animatedTextUp';
-import AnimatedTextLeft from '@/components/animatedTextLeft';
-import AnimatedTextRight from '@/components/animatedTextRight';
 import AnimatedTextScale from '@/components/animatedTextScale';
 
 const Homepage = () => {

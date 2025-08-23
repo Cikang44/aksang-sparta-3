@@ -10,6 +10,7 @@ const navItems = [
     { name: "Materi 2", path: "/materi/materi2" },
     { name: "Materi 3", path: "/materi/materi3" },
     { name: "Materi 4", path: "/materi/materi4" },
+    { name: "Materi 5", path: "/materi/materi5" },
 ];
 
 const MateriBar = () => {
@@ -18,7 +19,7 @@ const MateriBar = () => {
     return (
         <div style={{ fontFamily: "var(--font-family)" }}>
             <Navbar />
-            <div className="relative flex justify-center gap-80 p-10 font-bold">
+            <div className="relative flex p-10 font-bold justify-around">
                 {navItems.map((item) => (
                     <Link
                         key={item.path}
