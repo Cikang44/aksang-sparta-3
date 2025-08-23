@@ -10,12 +10,14 @@ const Homepage = () => {
             <BlurryDot size={300} color="bg-pink-500" position="bottom-1 right-1" />
             <div className="flex items-center justify-between" style={{ marginTop: "10vh", marginLeft: '25vh', marginRight: '25vh' }}>
                 {/* Kiri: Teks */}
-                <div className="flex flex-col items-start" style={{ maxWidth: "50%" }}>
-                    <h1 className="font-bold" style={{ fontSize: "50px" }}>Merah Putih : One For All</h1>
+                <div className="flex flex-col items-start text-justify" style={{ maxWidth: "60%" }}>
+                    <h1 className="font-bold" style={{ fontSize: "50px" }}>MAKE</h1>
+                    <h1 className="font-bold" style={{ fontSize: "50px" }}>Melek AI Kritis dan Etis</h1>
                     <h2>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad maiores
-                        laudantium nobis inventore! Nam, libero? Minima amet sed, dignissimos
-                        eos eius magnam nihil? Dolorem reiciendis eos facilis quo nobis animi!
+                        MAKE (Melek AI Kritis dan Etis) adalah acara angkatan Kelompok 3 yang
+                        bertujuan mengajak peserta lebih memahami perkembangan AI serta dampaknya.
+                        Melalui diskusi ringan dan interaktif, acara ini menekankan pentingnya bersikap kritis
+                        sekaligus bijak dalam menggunakan AI agar tetap etis dan bermanfaat bagi semua.
                     </h2>
                 </div>
 
