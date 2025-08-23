@@ -5,7 +5,7 @@ import AnimatedTextScale from '@/components/animatedTextScale';
 
 const Homepage = () => {
     return (
-        <div className='container'>
+        <div>
             <Navbar />
             <AnimatedTextScale>
                 <BlurryDot size={300} color="bg-blue-500" position="top-1" />
