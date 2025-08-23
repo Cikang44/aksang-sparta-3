@@ -1,13 +1,21 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import BlurryDot from '@/components/BlurDot';
+import AnimatedTextUp from '@/components/animatedTextUp';
+import AnimatedTextLeft from '@/components/animatedTextLeft';
+import AnimatedTextRight from '@/components/animatedTextRight';
+import AnimatedTextScale from '@/components/animatedTextScale';
 
 const Homepage = () => {
     return (
         <div className='container'>
             <Navbar />
-            <BlurryDot size={300} color="bg-blue-500" position="top-1" />
-            <BlurryDot size={300} color="bg-pink-500" position="bottom-1 right-1" />
+            <AnimatedTextScale>
+                <BlurryDot size={300} color="bg-blue-500" position="top-1" />
+            </AnimatedTextScale>
+            <AnimatedTextScale>
+                <BlurryDot size={300} color="bg-pink-500" position="bottom-1 right-1" />
+            </AnimatedTextScale>
             <div className="flex items-center justify-between" style={{ marginTop: "10vh", marginLeft: '25vh', marginRight: '25vh' }}>
                 {/* Kiri: Teks */}
                 <div className="flex flex-col items-start text-justify" style={{ maxWidth: "60%" }}>

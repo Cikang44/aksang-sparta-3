@@ -15,8 +15,8 @@ const AnimatedTextRight: React.FC<AnimatedTextProps> = ({ children, className })
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, x: 100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: 20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className={`text-3xl ${className || ""}`}
         >
