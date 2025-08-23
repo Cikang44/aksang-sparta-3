@@ -14,7 +14,6 @@ export default function Navbar() {
         { name: "Materi", path: "/materi/materi1" },
         { name: "Game", path: "/game" },
         { name: "ChatBot", path: "/chatbot" },
-        { name: "Inovasi", path: "/inovasi" },
     ];
 
     return (
